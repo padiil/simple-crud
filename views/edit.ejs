@@ -1,0 +1,25 @@
+<%- include('partials/header') %>
+<main>
+  <div class="bg-white shadow rounded p-4">
+    <h2 class="text-xl font-semibold mb-4">Edit Item</h2>
+    <form method="POST" action="/items/<%= item._id %>?_method=PUT" class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium mb-1">Title</label>
+        <input name="title" required class="w-full border rounded px-3 py-2" value="<%= item.title %>" />
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1">Description</label>
+        <textarea name="description" class="w-full border rounded px-3 py-2"><%= item.description || '' %></textarea>
+      </div>
+      <div class="flex items-center gap-2">
+        <input id="done" type="checkbox" name="done" <%= item.done ? 'checked' : '' %> />
+        <label for="done">Done</label>
+      </div>
+      <div class="flex gap-2">
+        <a href="/items" class="px-3 py-2 bg-gray-200 rounded">Cancel</a>
+        <button class="px-3 py-2 bg-blue-600 text-white rounded">Save</button>
+      </div>
+    </form>
+  </div>
+</main>
+<%- include('partials/footer') %>
