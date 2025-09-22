@@ -6,8 +6,8 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const app = express();
-const PORT = process.env.PORT || 3000;
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/simple_crud';
+const PORT = process.env.PORT;
+const MONGO_URI = process.env.MONGO_URI;
 
 // DB connect
 mongoose
